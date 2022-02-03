@@ -29,23 +29,21 @@ namespace GetFileName
 
         private void BtnGetFileName_Click(object sender, RoutedEventArgs e)
         {
-            var path = @"E:\WPF\BootUsingWebView\WpfApp2\bin\Debug\netcoreapp3.1";
+            var path = @"E:\WPF\BootUsingWebView\packages\System.Threading.Tasks.Extensions.4.5.4";
             string[] fileArray = Directory.GetFiles(path);
             SaveFile(@"E:\My\MyTest.txt", fileArray);
         }
         public void SaveFile(string path, string[] files)
         {
-            if (!File.Exists(path))
-            {
                 // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = new StreamWriter(path, true))
                 {
                   foreach(var file in files)
                     {
                         sw.WriteLine(file);
                     }
                 }
-            }
+          
         }
     }
 }

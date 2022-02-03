@@ -8,6 +8,5 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="GetFileName" Name="btnGetFileName"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Height="47" Margin="325,288,0,0"/>
-
     </Grid>
 </Window>
